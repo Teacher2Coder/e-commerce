@@ -43,7 +43,7 @@ To get a single tag, perform a GET request to "localhost.3001/api/tags/x" with x
 To create a new category, perform a POST request to "localhost.3001/api/categories" and include an opbject that follows this convention: 
 ```
 {
-    category_name: "New category name"
+    "category_name": "New category name"
 }
 ```
 ![Create category](./assets/post-category.png)
@@ -54,10 +54,11 @@ After the request has been made, the new category will be added to the database.
 To create a new product, perform a POST request to "localhost.3001/api/products" and include an object in the body request that follows this convention:
 ```
 {
-    product_name: "New product name",
-    price: 200.00,
-    stock: 3,
-    tagIds: [1, 2, 3, 4]
+    "product_name": "New product name",
+    "price": 200.00,
+    "stock": 3,
+    "category_id": 1,
+    "tagId": [1, 2, 3]
 }
 ```
 ![Create product](./assets/post-product.png)
@@ -67,7 +68,7 @@ After the request has been made, the new category will be added to the database.
 To create a new tag, perform a POST request to "localhost.3001/api/tags" and include an object in the body request that follows this convention:
 ```
 {
-    tag_name: "New tag name"
+    "tag_name": "New tag name"
 }
 ```
 ![Create Tags](./assets/post-tag.png)
@@ -80,7 +81,7 @@ After the request has been made, the new category will be added to the database.
 To update a category, make a PUT request to "localhost.3001/api/categories/x" with x being the ID for the category that you want to update. Include an object in the body that follows this convention:
 ```
 {
-    category_name: "Updated category name"
+    "category_name": "Updated category name"
 }
 ```
 ![Update category](./assets/put-category.png)
@@ -90,10 +91,11 @@ To confirm the update, make a GET request to "localhost.3001/api/categories/x" a
 To update a product, make a PUT request to "localhost.3001/api/product/x" with x being the ID for the product that you want to update. Include an object in the body that follows this convention:
 ```
 {
-    product_name: "Updated product name",
-    price: 300.00,
-    stock: 7,
-    tagIds: [2, 4, 6]
+    "product_name": "Updated product name",
+    "price": 300.00,
+    "stock": 7,
+    "category_id": 2
+    "tagIds": [2, 4, 6]
 }
 ```
 ![Update Product](./assets/put-product.png)
@@ -103,7 +105,7 @@ To confirm the update, make a GET request to "localhost.3001/api/products/x" and
 To update a tag, make a PUT request to "localhost.3001/api/tags/x" with x being the ID for the tag that you want to update. Include an object in the body that follows this convention:
 ```
 {
-    tag_name: "Updated tag name"
+    "tag_name": "Updated tag name"
 }
 ```
 ![Update Tag](./assets/put-tag.png)
